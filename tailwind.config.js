@@ -11,6 +11,10 @@ export default {
 
     theme: {
         extend: {
+            container: {
+                center: true,
+                padding: '1rem'
+            },
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },

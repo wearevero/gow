@@ -11,10 +11,10 @@
                 @foreach ($products as $product)
                  <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        <h3 class="text-lg font-semibold">{{ $product->name }}</h3>
+                        <h3 class="text-lg font-semibold line-clamp-1">{{ $product->name }}</h3>
                         <p class="text-gray-600 line-clamp-2 my-4">{{ $product->description }}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-600"><sup>Rp. </sup>{{ $product->price }}</span>
+                            <span class="text-gray-600"><sup>Rp. </sup>{{ number_format($product->price, 0,0, '.') }}</span>
                             <x-primary-anchor :href="route('products.show', $product)">
                                 Detail
                             </x-primary-anchor>

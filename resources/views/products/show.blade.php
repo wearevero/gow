@@ -4,9 +4,11 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ $product->name }}
             </h2>
-            <x-primary-anchor :href="route('products.edit', $product)">
-                Edit
-            </x-primary-anchor>
+            @if (auth()->user()?->isAdmin)
+                <x-primary-anchor :href="route('products.edit', $product)">
+                    Edit
+                </x-primary-anchor>
+            @endif
         </div>
     </x-slot>
 
@@ -18,7 +20,7 @@
                         <h3 class="text-lg font-semibold">{{ $product->name }}</h3>
                         <p class="text-gray-600 line-clamp-2 my-4">{{ $product->description }}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-600"><sup>Rp. </sup>{{ number_format($product->price) }}</span>
+                            <span class="text-gray-600"><sup>Rp. </sup>{{ number_format($product->price, 0,0, '.') }}</span>
                             <x-primary-anchor :href="route('products.show', $product)">
                                 Detail
                             </x-primary-anchor>
