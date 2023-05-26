@@ -16,9 +16,6 @@
                 @if ($referrer->count() > 0)
                     <x-shortener-stats name="Referrer" :data="$referrer"/>
                 @endif
-                <x-shortener-stats name="Device" :data="$device"/>
-                <x-shortener-stats name="City Location" :data="$city"/>
-                <x-shortener-stats name="Country Location" :data="$country"/>
             </div>
         </div>
     </div>

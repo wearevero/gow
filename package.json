@@ -1,6 +1,6 @@
 {
     "name": "@wearevero/gow",
-    "description": "simple URL shortener",
+    "description": "simple URL shortener with analytics.",
     "private": true,
     "type": "module",
     "scripts": {
