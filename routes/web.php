@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShortenerController;
 use Illuminate\Support\Facades\Route;
+use Spatie\LaravelIgnition\Http\Controllers\HealthCheckController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/dashboard', DashboardController::class)->middleware(['auth', 'verified'])->name('dashboard');
@@ -22,4 +23,5 @@ Route::get('shorteners/{shortener}/stats', [ShortenerController::class, 'stats']
 
 require __DIR__.'/auth.php';
 
+Route::get('health?fresh', [HealthCheckController::class, '__invoke'])->name('health');
 Route::get('/{shortener}', [ShortenerController::class, 'show'])->name('shortener.show');
